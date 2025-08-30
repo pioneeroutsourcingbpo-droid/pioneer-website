@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services - Pioneer Outsourcing BPO</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    /* Hero Section with Video */
+    .hero {
+      position: relative;
+      height: 90vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+
+    .hero video {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(0.5);
+    }
+
+    .hero-content {
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      animation: fadeInDown 1s ease;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      animation: fadeInUp 1s ease;
+    }
+
+    /* Services Grid */
+    .services {
+      padding: 4rem 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .service-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .service-card i {
+      font-size: 2.5rem;
+      color: #f9a826;
+      margin-bottom: 1rem;
+    }
+
+    @keyframes fadeInDown {
+      from {opacity: 0; transform: translateY(-30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- Hero Section -->
+  <section class="hero">
+    <!-- Background Video (replace with your own MP4 or YouTube embed) -->
+    <video autoplay muted loop>
+      <source src="your-video.mp4" type="video/mp4">
+      Your browser does not support video.
+    </video>
+    <div class="hero-content">
+      <h1>Our Services</h1>
+      <p>We connect your business to success through expert outsourcing solutions</p>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="services">
+    <div class="service-card">
+      <i class="fas fa-headset"></i>
+      <h3>Call Center Solutions</h3>
+      <p>24/7 customer support with trained professionals to keep your clients satisfied.</p>
+    </div>
+    <div class="service-card">
+      <i class="fas fa-briefcase"></i>
+      <h3>Back Office Support</h3>
+      <p>Data entry, processing, and admin tasks so you can focus on growing your business.</p>
+    </div>
+    <div class="service-card">
+      <i class="fas fa-globe"></i>
+      <h3>Outsourcing Solutions</h3>
+      <p>Tailored outsourcing strategies that save costs and increase efficiency.</p>
+    </div>
+    <div class="service-card">
+      <i class="fas fa-chart-line"></i>
+      <h3>Business Growth</h3>
+      <p>Scalable outsourcing to help you expand operations and reach new markets.</p>
+    </div>
+  </section>
+
+</body>
+</html>
