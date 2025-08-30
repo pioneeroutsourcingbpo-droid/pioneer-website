@@ -78,7 +78,7 @@
             background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
             color: var(--light-text);
             text-align: center;
-            padding: 6rem 2rem;
+            padding: 6rem 2rem 4rem;
             position: relative;
             overflow: hidden;
         }
@@ -95,11 +95,44 @@
             background-position: center;
         }
         
+        .logo-container {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo {
+            height: 60px;
+            width: auto;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .company-name {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--accent-light);
+            margin-left: 15px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
         .header-content {
             position: relative;
             z-index: 1;
             max-width: 800px;
             margin: 0 auto;
+            padding-top: 40px;
         }
         
         header h1 {
@@ -359,15 +392,46 @@
                 grid-template-columns: 1fr;
             }
             
+            .logo-container {
+                top: 15px;
+            }
+            
+            .logo {
+                height: 45px;
+            }
+            
+            .company-name {
+                font-size: 1.4rem;
+            }
+            
             .footer-links a {
                 display: block;
                 margin: 0.5rem 0;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .logo-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .company-name {
+                margin-left: 0;
+                margin-top: 8px;
+                font-size: 1.2rem;
             }
         }
     </style>
 </head>
 <body>
     <header>
+        <div class="logo-container">
+            <!-- Logo path is correct since logo.png is in the same directory -->
+            <img src="logo.png" alt="Pioneer Outsourcing BPO Logo" class="logo">
+            <div class="company-name">Pioneer Outsourcing</div>
+        </div>
+        
         <div class="header-content">
             <h1>Discover Your Perfect Outsourcing Solution</h1>
             <p>Partner with Pioneer Outsourcing BPO for expert call center and outsourcing services tailored to drive your business success.</p>
@@ -457,7 +521,7 @@
                     </div>
                     <div class="service-content">
                         <h3>Technical Support</h3>
-                        <p>Comprehensive technical support to resolve issues efficiently, enhancing customer satisfaction.</p>
+                    <p>Comprehensive technical support to resolve issues efficiently, enhancing customer satisfaction.</p>
                     </div>
                     <a href="#" class="btn">Read More</a>
                 </div>
@@ -584,5 +648,18 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Simple animation for page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const logo = document.querySelector('.logo');
+            if (logo) {
+                setTimeout(function() {
+                    logo.style.opacity = '1';
+                    logo.style.transform = 'translateY(0)';
+                }, 300);
+            }
+        });
+    </script>
 </body>
 </html>
