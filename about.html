@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Pioneer Outsourcing BPO</title>
+    <title>Our Services - Pioneer Outsourcing BPO</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -34,6 +34,7 @@
             color: var(--dark-text);
             background-color: #FFFFFF;
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
         
         h1, h2, h3, h4, h5, h6 {
@@ -46,6 +47,91 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+        }
+        
+        /* Animated Background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .bg-element {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 15s infinite ease-in-out;
+        }
+        
+        .bg-element:nth-child(1) {
+            width: 300px;
+            height: 300px;
+            background: var(--accent);
+            top: 10%;
+            left: 5%;
+            animation-duration: 20s;
+        }
+        
+        .bg-element:nth-child(2) {
+            width: 200px;
+            height: 200px;
+            background: var(--primary);
+            top: 70%;
+            left: 80%;
+            animation-duration: 15s;
+            animation-delay: 1s;
+        }
+        
+        .bg-element:nth-child(3) {
+            width: 150px;
+            height: 150px;
+            background: var(--accent-light);
+            top: 30%;
+            left: 90%;
+            animation-duration: 25s;
+            animation-delay: 0.5s;
+        }
+        
+        .bg-element:nth-child(4) {
+            width: 250px;
+            height: 250px;
+            background: var(--primary-dark);
+            top: 60%;
+            left: 10%;
+            animation-duration: 18s;
+            animation-delay: 2s;
+        }
+        
+        .bg-element:nth-child(5) {
+            width: 180px;
+            height: 180px;
+            background: var(--accent);
+            top: 20%;
+            left: 70%;
+            animation-duration: 22s;
+            animation-delay: 1.5s;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(20px, 15px) rotate(5deg);
+            }
+            50% {
+                transform: translate(0, 30px) rotate(0deg);
+            }
+            75% {
+                transform: translate(-20px, 15px) rotate(-5deg);
+            }
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
         }
         
         /* Header */
@@ -173,6 +259,8 @@
         /* Sections */
         .section {
             padding: 5rem 0;
+            position: relative;
+            z-index: 1;
         }
         
         .section-title {
@@ -204,27 +292,14 @@
             font-size: 1.1rem;
         }
         
-        /* About Content */
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-        
-        .about-content p {
-            margin-bottom: 1.5rem;
-        }
-        
-        /* Mission & Vision */
-        .mission-vision {
+        /* Services */
+        .services {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin: 3rem 0;
         }
         
-        .card {
+        .service {
             background-color: white;
             padding: 2.5rem 2rem;
             border-radius: 10px;
@@ -232,152 +307,87 @@
             box-shadow: var(--shadow);
             transition: var(--transition);
             border-top: 4px solid var(--accent);
+            position: relative;
+            overflow: hidden;
         }
         
-        .card:hover {
+        .service:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
         
-        .card-icon {
+        .service-icon {
             font-size: 2.5rem;
             color: var(--accent);
             margin-bottom: 1.5rem;
+            transition: var(--transition);
         }
         
-        .card h3 {
+        .service:hover .service-icon {
+            transform: scale(1.2);
+        }
+        
+        .service h3 {
             font-size: 1.5rem;
             color: var(--primary);
             margin-bottom: 1rem;
         }
         
-        /* Values */
-        .values {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
+        .service p {
+            margin-bottom: 1.5rem;
         }
         
-        .value {
-            text-align: center;
-            padding: 1.5rem;
-        }
-        
-        .value-icon {
-            font-size: 2.5rem;
-            color: var(--accent);
-            margin-bottom: 1rem;
-        }
-        
-        .value h3 {
-            font-size: 1.3rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-        
-        /* Team */
-        .team {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-        
-        .team-member {
-            text-align: center;
-            padding: 2rem;
-            background: white;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-        
-        .team-member:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-        
-        .team-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 1.5rem;
-            border: 4px solid var(--accent-light);
-        }
-        
-        .team-member h3 {
-            font-size: 1.3rem;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-        
-        .team-role {
-            color: var(--accent);
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-        
-        /* Partners Section */
-        .partners {
+        /* Process Section */
+        .process {
             background: var(--light-bg);
-            padding: 4rem 0;
+            padding: 5rem 0;
         }
         
-        .partners-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 2rem;
-            align-items: center;
-            justify-items: center;
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
         }
         
-        .partner-logo {
-            max-width: 150px;
-            max-height: 80px;
-            width: auto;
-            height: auto;
-            filter: grayscale(100%);
-            opacity: 0.7;
-            transition: var(--transition);
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--accent);
+            z-index: 1;
         }
         
-        .partner-logo:hover {
-            filter: grayscale(0%);
-            opacity: 1;
-            transform: scale(1.05);
-        }
-        
-        /* Stats Section */
-        .stats {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
-            color: white;
-            padding: 4rem 0;
-        }
-        
-        .stats-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
+        .step {
             text-align: center;
+            position: relative;
+            z-index: 2;
+            flex: 1;
         }
         
-        .stat {
-            padding: 1.5rem;
-        }
-        
-        .stat-number {
-            font-size: 3rem;
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: var(--accent);
+            color: var(--primary-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
             font-weight: 700;
-            color: var(--accent-light);
-            margin-bottom: 0.5rem;
+            margin: 0 auto 1.5rem;
+            position: relative;
         }
         
-        .stat-title {
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .step h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
         }
         
         /* Contact Form */
@@ -457,12 +467,35 @@
             color: var(--error);
         }
         
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+        
+        .cta .section-title h2 {
+            color: white;
+        }
+        
+        .cta .btn {
+            background: white;
+            color: var(--primary);
+        }
+        
+        .cta .btn:hover {
+            background: var(--accent-light);
+        }
+        
         /* Footer */
         footer {
             background-color: var(--primary-dark);
             color: var(--light-text);
             padding: 3rem 0 1.5rem;
             text-align: center;
+            position: relative;
+            z-index: 1;
         }
         
         .footer-links {
@@ -500,7 +533,7 @@
                 font-size: 2rem;
             }
             
-            .mission-vision, .values, .team {
+            .services {
                 grid-template-columns: 1fr;
             }
             
@@ -524,13 +557,13 @@
                 margin: 0.5rem;
             }
             
-            .partners-grid {
-                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-                gap: 1.5rem;
+            .process-steps {
+                flex-direction: column;
+                gap: 2rem;
             }
             
-            .partner-logo {
-                max-width: 120px;
+            .process-steps::before {
+                display: none;
             }
             
             .form-row {
@@ -555,22 +588,22 @@
                 font-size: 1.2rem;
             }
             
-            .stats-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .stat-number {
-                font-size: 2.5rem;
-            }
-            
-            .partners-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
+            .bg-element {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Animated Background Elements -->
+    <div class="animated-bg">
+        <div class="bg-element"></div>
+        <div class="bg-element"></div>
+        <div class="bg-element"></div>
+        <div class="bg-element"></div>
+        <div class="bg-element"></div>
+    </div>
+
     <header>
         <div class="logo-container">
             <img src="logo.png" alt="Pioneer Outsourcing BPO Logo" class="logo">
@@ -578,153 +611,117 @@
         </div>
         
         <div class="header-content">
-            <h1>Our Story</h1>
-            <p>Learn about our journey, mission, and the values that drive us forward</p>
-            <a href="#mission" class="btn">Discover More <i class="fas fa-arrow-down"></i></a>
+            <h1>Our Services</h1>
+            <p>Comprehensive BPO solutions tailored to your business needs</p>
+            <a href="#services" class="btn">Explore Services <i class="fas fa-arrow-down"></i></a>
         </div>
     </header>
 
     <nav>
         <div class="container nav-container">
             <a href="index.html" class="nav-link">Home</a>
-            <a href="#story" class="nav-link">Our Story</a>
-            <a href="#mission" class="nav-link">Mission</a>
-            <a href="#values" class="nav-link">Values</a>
-            <a href="#partners" class="nav-link">Partners</a>
-            <a href="#numbers" class="nav-link">Numbers</a>
+            <a href="about.html" class="nav-link">About Us</a>
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#process" class="nav-link">Our Process</a>
             <a href="#contact" class="nav-link">Contact</a>
+            <a href="careers.html" class="nav-link">Careers</a>
         </div>
     </nav>
 
     <div class="container">
-        <section class="section" id="story">
+        <section class="section" id="services">
             <div class="section-title">
-                <h2>Our Story</h2>
+                <h2>Our Services</h2>
             </div>
+            <p class="section-intro">We offer a comprehensive range of Business Process Outsourcing services designed to help your business grow and succeed.</p>
             
-            <div class="about-content">
-                <p>Founded in Kenya, Pioneer Outsourcing BPO began with a simple vision: to provide world-class outsourcing solutions while creating meaningful employment opportunities in East Africa. What started as a small team with big dreams has grown into a leading Business Process Outsourcing company serving clients across the globe.</p>
-                
-                <p>Our journey began when our founders recognized the potential of Kenya's talented, educated, and multilingual workforce to deliver exceptional outsourcing services. With a strategic location that allows us to serve European, Asian, and American markets during their business hours, we've positioned ourselves as a global player in the BPO industry.</p>
-                
-                <p>Over the years, we've invested heavily in cutting-edge technology, comprehensive training programs, and creating a work environment that fosters innovation and excellence. Our commitment to quality and client satisfaction has been the driving force behind our growth and success.</p>
-                
-                <p>Today, we're proud to be a trusted partner to businesses worldwide, helping them streamline operations, reduce costs, and enhance customer experiences through our tailored outsourcing solutions.</p>
-            </div>
-        </section>
-
-        <section class="section" id="mission">
-            <div class="section-title">
-                <h2>Our Mission & Vision</h2>
-            </div>
-            
-            <div class="mission-vision">
-                <div class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-bullseye"></i>
+            <div class="services">
+                <div class="service">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
                     </div>
-                    <h3>Our Mission</h3>
-                    <p>To deliver exceptional outsourcing solutions that drive business growth for our clients while creating sustainable employment opportunities and fostering professional development for our team members.</p>
+                    <h3>Customer Service</h3>
+                    <p>24/7 customer support solutions including call center operations, help desk services, and customer relationship management.</p>
+                    <a href="#" class="btn">Learn More</a>
                 </div>
                 
-                <div class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-eye"></i>
+                <div class="service">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
                     </div>
-                    <h3>Our Vision</h3>
-                    <p>To be the leading BPO service provider in East Africa, recognized for excellence, innovation, and our commitment to transforming businesses and lives through outsourcing.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="values">
-            <div class="section-title">
-                <h2>Our Values</h2>
-            </div>
-            
-            <div class="values">
-                <div class="value">
-                    <div class="value-icon">
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h3>Excellence</h3>
-                    <p>We strive for excellence in everything we do, delivering superior quality and exceeding expectations.</p>
+                    <h3>Technical Support</h3>
+                    <p>Comprehensive technical support services to resolve issues efficiently and enhance customer satisfaction.</p>
+                    <a href="#" class="btn">Learn More</a>
                 </div>
                 
-                <div class="value">
-                    <div class="value-icon">
-                        <i class="fas fa-users"></i>
+                <div class="service">
+                    <div class="service-icon">
+                        <i class="fas fa-desktop"></i>
                     </div>
-                    <h3>Collaboration</h3>
-                    <p>We believe in the power of teamwork and partnership, both within our organization and with our clients.</p>
+                    <h3>Back Office Operations</h3>
+                    <p>Precise data entry, processing, and administrative tasks to streamline your operations and increase efficiency.</p>
+                    <a href="#" class="btn">Learn More</a>
                 </div>
                 
-                <div class="value">
-                    <div class="value-icon">
-                        <i class="fas fa-lightbulb"></i>
+                <div class="service">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-pie"></i>
                     </div>
-                    <h3>Innovation</h3>
-                    <p>We embrace innovation and continuously seek new ways to improve our services and processes.</p>
+                    <h3>Sales & Lead Generation</h3>
+                    <p>Outbound sales, lead qualification, and market research to accelerate business growth and increase revenue.</p>
+                    <a href="#" class="btn">Learn More</a>
                 </div>
                 
-                <div class="value">
-                    <div class="value-icon">
-                        <i class="fas fa-hand-holding-heart"></i>
+                <div class="service">
+                    <div class="service-icon">
+                        <i class="fas fa-calendar-check"></i>
                     </div>
-                    <h3>Integrity</h3>
-                    <p>We conduct our business with honesty, transparency, and ethical practices.</p>
+                    <h3>Appointment Setting</h3>
+                    <p>Seamless scheduling and confirmation of appointments to optimize client engagement and conversion rates.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+                
+                <div class="service">
+                    <div class="service-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Telemarketing</h3>
+                    <p>Strategic product promotions, surveys, and polls to enhance brand visibility and customer acquisition.</p>
+                    <a href="#" class="btn">Learn More</a>
                 </div>
             </div>
         </section>
 
-        <section class="section" id="partners">
-            <div class="section-title">
-                <h2>Our Trusted Partners</h2>
-            </div>
-            
-            <p class="section-intro">We're proud to collaborate with industry leaders and innovative companies from around the world.</p>
-            
-            <div class="partners">
-                <div class="partners-grid">
-                    <img src="Partner.webp" alt="Partner" class="partner-logo">
-                    <img src="partner2.webp" alt="Partner 2" class="partner-logo">
-                    <img src="partner3.png" alt="Partner 3" class="partner-logo">
-                    <img src="partner4.webp" alt="Partner 4" class="partner-logo">
-                    <img src="partner5.webp" alt="Partner 5" class="partner-logo">
-                    <img src="partner6.webp" alt="Partner 6" class="partner-logo">
-                    <img src="partner7.webp" alt="Partner 7" class="partner-logo">
-                    <img src="partner8.png" alt="Partner 8" class="partner-logo">
-                    <img src="partner9.png" alt="Partner 9" class="partner-logo">
-                    <img src="partner10.png" alt="Partner 10" class="partner-logo">
-                </div>
-            </div>
-        </section>
-
-        <section class="stats" id="numbers">
+        <section class="process" id="process">
             <div class="container">
                 <div class="section-title">
-                    <h2 style="color: white;">Our Impact in Numbers</h2>
+                    <h2>Our Process</h2>
                 </div>
+                <p class="section-intro">We follow a structured approach to ensure seamless integration and maximum efficiency for your business.</p>
                 
-                <div class="stats-container">
-                    <div class="stat">
-                        <div class="stat-number" id="partnerCount">0</div>
-                        <div class="stat-title">Trusted Partner Companies</div>
+                <div class="process-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Consultation</h3>
+                        <p>We begin by understanding your unique business needs and challenges.</p>
                     </div>
                     
-                    <div class="stat">
-                        <div class="stat-number" id="agentCount">0</div>
-                        <div class="stat-title">Experienced Agents Onboarded</div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Planning</h3>
+                        <p>We develop a customized strategy tailored to your specific requirements.</p>
                     </div>
                     
-                    <div class="stat">
-                        <div class="stat-number" id="completedCount">0</div>
-                        <div class="stat-title">Successful Campaigns Completed</div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Implementation</h3>
+                        <p>Our team executes the plan with precision and attention to detail.</p>
                     </div>
                     
-                    <div class="stat">
-                        <div class="stat-number" id="ongoingCount">0</div>
-                        <div class="stat-title">Ongoing Campaigns</div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>Optimization</h3>
+                        <p>We continuously monitor and refine our approach for optimal results.</p>
                     </div>
                 </div>
             </div>
@@ -735,7 +732,7 @@
                 <h2>Get In Touch</h2>
             </div>
             
-            <p class="section-intro">Have questions or want to learn more about our services? Reach out to us today.</p>
+            <p class="section-intro">Interested in our services? Contact us today for a free consultation.</p>
             
             <div class="contact-form">
                 <div id="alertBox" class="alert"></div>
@@ -755,13 +752,27 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="subject">Subject <span class="required">*</span></label>
-                        <input type="text" id="subject" name="subject" required>
+                        <label for="company">Company Name</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">Service Interested In <span class="required">*</span></label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a service</option>
+                            <option value="customer-service">Customer Service</option>
+                            <option value="technical-support">Technical Support</option>
+                            <option value="back-office">Back Office Operations</option>
+                            <option value="sales">Sales & Lead Generation</option>
+                            <option value="appointment">Appointment Setting</option>
+                            <option value="telemarketing">Telemarketing</option>
+                            <option value="multiple">Multiple Services</option>
+                        </select>
                     </div>
                     
                     <div class="form-group">
                         <label for="message">Message <span class="required">*</span></label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell us about your business needs..." required></textarea>
                     </div>
                     
                     <button type="submit" class="btn">Send Message <i class="fas fa-paper-plane"></i></button>
@@ -775,9 +786,9 @@
             <div class="footer-links">
                 <a href="index.html">Home</a>
                 <a href="about.html">About Us</a>
-                <a href="services.html">Services</a>
+                <a href="#services">Services</a>
                 <a href="careers.html">Careers</a>
-                <a href="contact.html">Contact</a>
+                <a href="#contact">Contact</a>
             </div>
             
             <div class="copyright">
@@ -787,37 +798,21 @@
     </footer>
 
     <script>
-        // Animated counting for stats
-        function animateValue(id, start, end, duration) {
-            const obj = document.getElementById(id);
-            let startTimestamp = null;
-            const step = (timestamp) => {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                obj.innerHTML = Math.floor(progress * (end - start) + start);
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
-            };
-            window.requestAnimationFrame(step);
-        }
-        
-        // Start animations when stats section is in view
+        // Simple animation for service icons
         document.addEventListener('DOMContentLoaded', function() {
-            const statsSection = document.getElementById('numbers');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        animateValue('partnerCount', 0, 10, 2000);
-                        animateValue('agentCount', 0, 150, 2000);
-                        animateValue('completedCount', 0, 15, 2000);
-                        animateValue('ongoingCount', 0, 4, 2000);
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.5 });
+            const services = document.querySelectorAll('.service');
             
-            observer.observe(statsSection);
+            services.forEach(service => {
+                service.addEventListener('mouseenter', function() {
+                    const icon = this.querySelector('.service-icon');
+                    icon.style.transform = 'scale(1.2)';
+                });
+                
+                service.addEventListener('mouseleave', function() {
+                    const icon = this.querySelector('.service-icon');
+                    icon.style.transform = 'scale(1)';
+                });
+            });
             
             // Form submission handling
             const contactForm = document.getElementById('contactForm');
@@ -842,10 +837,10 @@
                 // Basic validation
                 const name = document.getElementById('name').value;
                 const email = document.getElementById('email').value;
-                const subject = document.getElementById('subject').value;
+                const service = document.getElementById('service').value;
                 const message = document.getElementById('message').value;
                 
-                if (!name || !email || !subject || !message) {
+                if (!name || !email || !service || !message) {
                     e.preventDefault();
                     showAlert('Please fill in all required fields.', 'error');
                     return;
