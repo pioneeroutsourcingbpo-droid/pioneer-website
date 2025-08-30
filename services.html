@@ -1,133 +1,866 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Services - Pioneer Outsourcing BPO</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: #f9f9f9;
-      color: #333;
-    }
-
-    /* Hero Section with Video */
-    .hero {
-      position: relative;
-      height: 90vh;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-    }
-
-    .hero video {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      object-fit: cover;
-      z-index: -1;
-      filter: brightness(0.5);
-    }
-
-    .hero-content {
-      z-index: 1;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      animation: fadeInDown 1s ease;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      margin-top: 10px;
-      animation: fadeInUp 1s ease;
-    }
-
-    /* Services Grid */
-    .services {
-      padding: 4rem 2rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .service-card {
-      background: white;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-      text-align: center;
-      transition: transform 0.3s ease;
-    }
-
-    .service-card:hover {
-      transform: translateY(-8px);
-    }
-
-    .service-card i {
-      font-size: 2.5rem;
-      color: #f9a826;
-      margin-bottom: 1rem;
-    }
-
-    @keyframes fadeInDown {
-      from {opacity: 0; transform: translateY(-30px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-
-    @keyframes fadeInUp {
-      from {opacity: 0; transform: translateY(30px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Pioneer Outsourcing BPO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-dark: #1C2B39;
+            --primary: #2C3E50;
+            --accent: #F9A826;
+            --accent-light: #FFD166;
+            --light-bg: #F8F9FA;
+            --dark-text: #2D3436;
+            --light-text: #ECF0F1;
+            --gray: #DFE6E9;
+            --success: #27AE60;
+            --error: #E74C3C;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            background-color: #FFFFFF;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Animated Background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .bg-element {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 15s infinite ease-in-out;
+        }
+        
+        .bg-element:nth-child(1) {
+            width: 300px;
+            height: 300px;
+            background: var(--accent);
+            top: 10%;
+            left: 5%;
+            animation-duration: 20s;
+        }
+        
+        .bg-element:nth-child(2) {
+            width: 200px;
+            height: 200px;
+            background: var(--primary);
+            top: 70%;
+            left: 80%;
+            animation-duration: 15s;
+            animation-delay: 1s;
+        }
+        
+        .bg-element:nth-child(3) {
+            width: 150px;
+            height: 150px;
+            background: var(--accent-light);
+            top: 30%;
+            left: 90%;
+            animation-duration: 25s;
+            animation-delay: 0.5s;
+        }
+        
+        .bg-element:nth-child(4) {
+            width: 250px;
+            height: 250px;
+            background: var(--primary-dark);
+            top: 60%;
+            left: 10%;
+            animation-duration: 18s;
+            animation-delay: 2s;
+        }
+        
+        .bg-element:nth-child(5) {
+            width: 180px;
+            height: 180px;
+            background: var(--accent);
+            top: 20%;
+            left: 70%;
+            animation-duration: 22s;
+            animation-delay: 1.5s;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(20px, 15px) rotate(5deg);
+            }
+            50% {
+                transform: translate(0, 30px) rotate(0deg);
+            }
+            75% {
+                transform: translate(-20px, 15px) rotate(-5deg);
+            }
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: var(--light-text);
+            text-align: center;
+            padding: 6rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23F9A826' fill-opacity='0.1' d='M0,128L48,117.3C96,107,192,85,288,112C384,139,480,213,576,218.7C672,224,768,160,864,128C960,96,1056,96,1152,117.3C1248,139,1344,181,1392,202.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .logo-container {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo {
+            height: 60px;
+            width: auto;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .company-name {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--accent-light);
+            margin-left: 15px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding-top: 40px;
+        }
+        
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-light);
+        }
+        
+        header p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 30px;
+            background-color: var(--accent);
+            color: var(--primary-dark);
+            text-decoration: none;
+            border-radius: 4px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+        }
+        
+        .btn:hover {
+            background-color: var(--accent-light);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(249, 168, 38, 0.3);
+        }
+        
+        .btn i {
+            margin-left: 8px;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: var(--primary);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .nav-link:hover {
+            color: var(--accent-light);
+        }
+        
+        /* Sections */
+        .section {
+            padding: 5rem 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+        
+        .section-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Services */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service {
+            background-color: white;
+            padding: 2.5rem 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 4px solid var(--accent);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .service:hover .service-icon {
+            transform: scale(1.2);
+        }
+        
+        .service h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .service p {
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Process Section */
+        .process {
+            background: var(--light-bg);
+            padding: 5rem 0;
+        }
+        
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--accent);
+            z-index: 1;
+        }
+        
+        .step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            flex: 1;
+        }
+        
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: var(--accent);
+            color: var(--primary-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+            position: relative;
+        }
+        
+        .step h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        /* Contact Form */
+        .contact-form {
+            background: var(--light-bg);
+            padding: 3rem;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            color: var(--primary);
+        }
+        
+        .form-group input, 
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--gray);
+            border-radius: 4px;
+            font-family: 'Open Sans', sans-serif;
+            transition: var(--transition);
+        }
+        
+        .form-group input:focus, 
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(249, 168, 38, 0.2);
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        .alert {
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+            display: none;
+        }
+        
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .alert-error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .required {
+            color: var(--error);
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+        
+        .cta .section-title h2 {
+            color: white;
+        }
+        
+        .cta .btn {
+            background: white;
+            color: var(--primary);
+        }
+        
+        .cta .btn:hover {
+            background: var(--accent-light);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--light-text);
+            padding: 3rem 0 1.5rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer-links {
+            margin-bottom: 2rem;
+        }
+        
+        .footer-links a {
+            color: var(--accent-light);
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+            
+            header p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .services {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo-container {
+                top: 15px;
+            }
+            
+            .logo {
+                height: 45px;
+            }
+            
+            .company-name {
+                font-size: 1.4rem;
+            }
+            
+            .nav-container {
+                flex-wrap: wrap;
+            }
+            
+            .nav-link {
+                margin: 0.5rem;
+            }
+            
+            .process-steps {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .process-steps::before {
+                display: none;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .contact-form {
+                padding: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .logo-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .company-name {
+                margin-left: 0;
+                margin-top: 8px;
+                font-size: 1.2rem;
+            }
+            
+            .bg-element {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
-  
-  <!-- Hero Section -->
-  <section class="hero">
-    <!-- Background Video (replace with your own MP4 or YouTube embed) -->
-    <video autoplay muted loop>
-      <source src="your-video.mp4" type="video/mp4">
-      Your browser does not support video.
-    </video>
-    <div class="hero-content">
-      <h1>Our Services</h1>
-      <p>We connect your business to success through expert outsourcing solutions</p>
+    <!-- Animated Background Elements -->
+    <div class="animated-bg">
+        <div class="bg-element"></div>
+        <div class="bg-element"></div>
+        <div class="bg-element"></div>
+        <div class="bg-element"></div>
+        <div class="bg-element"></div>
     </div>
-  </section>
 
-  <!-- Services Grid -->
-  <section class="services">
-    <div class="service-card">
-      <i class="fas fa-headset"></i>
-      <h3>Call Center Solutions</h3>
-      <p>24/7 customer support with trained professionals to keep your clients satisfied.</p>
-    </div>
-    <div class="service-card">
-      <i class="fas fa-briefcase"></i>
-      <h3>Back Office Support</h3>
-      <p>Data entry, processing, and admin tasks so you can focus on growing your business.</p>
-    </div>
-    <div class="service-card">
-      <i class="fas fa-globe"></i>
-      <h3>Outsourcing Solutions</h3>
-      <p>Tailored outsourcing strategies that save costs and increase efficiency.</p>
-    </div>
-    <div class="service-card">
-      <i class="fas fa-chart-line"></i>
-      <h3>Business Growth</h3>
-      <p>Scalable outsourcing to help you expand operations and reach new markets.</p>
-    </div>
-  </section>
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="Pioneer Outsourcing BPO Logo" class="logo">
+            <div class="company-name">Pioneer Outsourcing</div>
+        </div>
+        
+        <div class="header-content">
+            <h1>Our Services</h1>
+            <p>Comprehensive BPO solutions tailored to your business needs</p>
+            <a href="#services" class="btn">Explore Services <i class="fas fa-arrow-down"></i></a>
+        </div>
+    </header>
 
+    <nav>
+        <div class="container nav-container">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About Us</a>
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#process" class="nav-link">Our Process</a>
+            <a href="#contact" class="nav-link">Contact</a>
+            <a href="careers.html" class="nav-link">Careers</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="section" id="services">
+            <div class="section-title">
+                <h2>Our Services</h2>
+            </div>
+            <p class="section-intro">We offer a comprehensive range of Business Process Outsourcing services designed to help your business grow and succeed.</p>
+            
+            <div class="services">
+                <div class="service">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Customer Service</h3>
+                    <p>24/7 customer support solutions including call center operations, help desk services, and customer relationship management.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+                
+                <div class="service">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Technical Support</h3>
+                    <p>Comprehensive technical support services to resolve issues efficiently and enhance customer satisfaction.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+                
+                <div class="service">
+                    <div class="service-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h3>Back Office Operations</h3>
+                    <p>Precise data entry, processing, and administrative tasks to streamline your operations and increase efficiency.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+                
+                <div class="service">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>Sales & Lead Generation</h3>
+                    <p>Outbound sales, lead qualification, and market research to accelerate business growth and increase revenue.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+                
+                <div class="service">
+                    <div class="service-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>Appointment Setting</h3>
+                    <p>Seamless scheduling and confirmation of appointments to optimize client engagement and conversion rates.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+                
+                <div class="service">
+                    <div class="service-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Telemarketing</h3>
+                    <p>Strategic product promotions, surveys, and polls to enhance brand visibility and customer acquisition.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="process" id="process">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Process</h2>
+                </div>
+                <p class="section-intro">We follow a structured approach to ensure seamless integration and maximum efficiency for your business.</p>
+                
+                <div class="process-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Consultation</h3>
+                        <p>We begin by understanding your unique business needs and challenges.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Planning</h3>
+                        <p>We develop a customized strategy tailored to your specific requirements.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Implementation</h3>
+                        <p>Our team executes the plan with precision and attention to detail.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>Optimization</h3>
+                        <p>We continuously monitor and refine our approach for optimal results.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="contact">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+            </div>
+            
+            <p class="section-intro">Interested in our services? Contact us today for a free consultation.</p>
+            
+            <div class="contact-form">
+                <div id="alertBox" class="alert"></div>
+                
+                <!-- Formspree Form with your endpoint -->
+                <form id="contactForm" action="https://formspree.io/f/xqadpvbq" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company">Company Name</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">Service Interested In <span class="required">*</span></label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a service</option>
+                            <option value="customer-service">Customer Service</option>
+                            <option value="technical-support">Technical Support</option>
+                            <option value="back-office">Back Office Operations</option>
+                            <option value="sales">Sales & Lead Generation</option>
+                            <option value="appointment">Appointment Setting</option>
+                            <option value="telemarketing">Telemarketing</option>
+                            <option value="multiple">Multiple Services</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message <span class="required">*</span></label>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell us about your business needs..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">Send Message <i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="#services">Services</a>
+                <a href="careers.html">Careers</a>
+                <a href="#contact">Contact</a>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Pioneer Outsourcing BPO. All rights reserved. | Nairobi, Kenya</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple animation for service icons
+        document.addEventListener('DOMContentLoaded', function() {
+            const services = document.querySelectorAll('.service');
+            
+            services.forEach(service => {
+                service.addEventListener('mouseenter', function() {
+                    const icon = this.querySelector('.service-icon');
+                    icon.style.transform = 'scale(1.2)';
+                });
+                
+                service.addEventListener('mouseleave', function() {
+                    const icon = this.querySelector('.service-icon');
+                    icon.style.transform = 'scale(1)';
+                });
+            });
+            
+            // Form submission handling
+            const contactForm = document.getElementById('contactForm');
+            const alertBox = document.getElementById('alertBox');
+            
+            // Function to show alert messages
+            function showAlert(message, type) {
+                alertBox.textContent = message;
+                alertBox.className = `alert alert-${type}`;
+                alertBox.style.display = 'block';
+                
+                // Scroll to alert
+                alertBox.scrollIntoView({ behavior: 'smooth' });
+                
+                // Hide alert after 5 seconds
+                setTimeout(() => {
+                    alertBox.style.display = 'none';
+                }, 5000);
+            }
+            
+            contactForm.addEventListener('submit', function(e) {
+                // Basic validation
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const service = document.getElementById('service').value;
+                const message = document.getElementById('message').value;
+                
+                if (!name || !email || !service || !message) {
+                    e.preventDefault();
+                    showAlert('Please fill in all required fields.', 'error');
+                    return;
+                }
+                
+                if (!isValidEmail(email)) {
+                    e.preventDefault();
+                    showAlert('Please enter a valid email address.', 'error');
+                    return;
+                }
+                
+                // If using Formspree, the form will submit normally
+                // For better UX, you could add a loading state here
+            });
+            
+            function isValidEmail(email) {
+                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(email);
+            }
+        });
+    </script>
 </body>
 </html>
