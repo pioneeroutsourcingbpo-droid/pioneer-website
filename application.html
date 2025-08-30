@@ -32,7 +32,9 @@
             font-family: 'Open Sans', sans-serif;
             line-height: 1.6;
             color: var(--dark-text);
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            background: linear-gradient(rgba(245, 247, 250, 0.9), rgba(228, 232, 240, 0.9)), 
+                        url('logo.png') center/30% no-repeat;
+            background-attachment: fixed;
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -47,6 +49,7 @@
             border-radius: 10px;
             box-shadow: var(--shadow);
             overflow: hidden;
+            position: relative;
         }
         
         header {
@@ -92,12 +95,15 @@
         
         .content {
             padding: 2rem;
+            position: relative;
+            z-index: 2;
         }
         
         .form-container {
             background: white;
             padding: 2rem;
             border-radius: 8px;
+            box-shadow: var(--shadow);
         }
         
         .form-title {
@@ -237,6 +243,10 @@
             .logo {
                 height: 45px;
             }
+            
+            body {
+                background-size: 50%;
+            }
         }
         
         @media (max-width: 576px) {
@@ -256,6 +266,11 @@
             .company-name {
                 margin-left: 0;
                 margin-top: 8px;
+                font-size: 1.2rem;
+            }
+            
+            body {
+                background-size: 70%;
             }
         }
     </style>
@@ -428,7 +443,7 @@
             formFields.forEach(field => {
                 field.addEventListener('blur', function() {
                     if (this.hasAttribute('required') && !this.value) {
-                        this.style.borderColor = var(--error);
+                        this.style.borderColor = 'var(--error)';
                     } else {
                         this.style.borderColor = '';
                     }
